@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>QRLLM</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <p id="message" role="status" data-state="empty">what are you doing here?</p>
+  <main id="lab" hidden>
+    <a class="back" href="https://ahamedwajibu.com/" aria-label="Back to ahamedwajibu.com">←</a>
+    <form id="generate-form">
+      <input id="prefix" aria-label="Starting letters" placeholder="Starting letters, then Enter" type="text" pattern="[A-Za-z]*" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go">
+      <output id="result" for="prefix" aria-label="Generated name" aria-live="off"></output>
+      <span id="announcement" class="sr-only" role="status"></span>
+    </form>
+  </main>
+</body>
+</html>

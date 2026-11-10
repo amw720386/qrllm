@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+#message { margin: 24px; }
+#lab { min-height: 100svh; display: grid; place-items: center; padding: 72px 20px; }
+.back {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: inherit;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+form { display: grid; gap: 8px; width: min(100%, 420px); }
+input, output {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid GrayText;
+  border-radius: 4px;
+  background: Canvas;
+  color: CanvasText;
+  padding: 12px;
+  font: inherit;
+}
+output { display: block; overflow-wrap: anywhere; font-size: 1.35rem; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
