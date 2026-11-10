@@ -1,8 +1,8 @@
 # Feasibility
 
 Version 40-L has 2,953 bytes of single-segment binary capacity. At M, Q and H
-the corresponding ceilings are 2,331, 1,663 and 1,273 bytes. The 33-character
-HTTPS prefix (including the fragment marker) and QR segment headers take part of that budget.
+the corresponding ceilings are 2,331, 1,663 and 1,273 bytes. The 35-character
+HTTPS prefix with the transport marker and QR segment headers take part of that budget.
 At 40-Q, the working estimates are 1.2 KB for Base64url in byte mode and 1.57 KB
 for URL-safe radix 43 in a separate alphanumeric segment. A numeric segment
 can approach 1.62 KB, but yields nearly twice as many URL characters as radix
