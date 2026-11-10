@@ -20,27 +20,33 @@
         <output id="result" for="prefix" aria-label="Generated name" aria-live="off"></output>
         <span id="announcement" class="sr-only" role="status"></span>
       </form>
-      <ol class="pipeline" aria-label="How the scanned model runs">
-        <li>
-          <svg viewBox="0 0 32 32" aria-hidden="true">
-            <path fill="none" stroke="currentColor" stroke-width="2" d="M4 4h8v8H4zm16 0h8v8h-8zM4 20h8v8H4z"/>
-            <path fill="currentColor" d="M7 7h2v2H7zm16 0h2v2h-2zM7 23h2v2H7zm9-7h4v4h-4zm8 0h4v4h-4zm-4 4h4v4h-4zm4 4h4v4h-4zm-8 0h4v4h-4z"/>
-          </svg>
-          <span>QR payload</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 32 32" aria-hidden="true">
-            <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="m16 3 13 7-13 7L3 10zm13 12-13 7-13-7m26 5-13 7-13-7M9.5 6.5l13 7m0-7-13 7"/>
-          </svg>
-          <span>Pretrained weights</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 32 32" aria-hidden="true">
-            <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M3 5h26v22H3zm0 5h26m-20 6 4 3-4 3m8 0h6"/>
-          </svg>
-          <span>Local inference</span>
-        </li>
-      </ol>
+      <figure class="pipeline">
+        <svg viewBox="0 0 600 96" aria-hidden="true">
+          <path class="trace" d="M100 48h48l18-18h66l18 18h100l18 18h66l18-18h48"/>
+          <path class="signal" pathLength="100" d="M100 48h48l18-18h66l18 18h100l18 18h66l18-18h48"/>
+          <g class="node" transform="translate(76 24)">
+            <rect width="48" height="48"/>
+            <path d="M8 8h12v12H8zm20 0h12v12H28zM8 28h12v12H8z"/>
+            <path class="pixel" d="M12 12h4v4h-4zm20 0h4v4h-4zM12 32h4v4h-4zm16-8h4v4h-4zm8 0h4v4h-4zm-4 4h4v4h-4zm-4 4h4v4h-4zm8 4h4v4h-4z"/>
+          </g>
+          <g class="node" transform="translate(276 24)">
+            <rect width="48" height="48"/>
+            <path d="M8 8h32v32H8zm0 8h32m-32 8h32m-32 8h32M16 8v32m8-32v32m8-32v32"/>
+            <path class="pixel" d="M8 8h8v8H8zm16 8h8v8h-8zm8 8h8v8h-8zm-16 8h8v8h-8z"/>
+          </g>
+          <g class="node" transform="translate(476 24)">
+            <rect width="48" height="48"/>
+            <path d="M8 27h7l5-10 6 16 6-13 4 7h4"/>
+          </g>
+        </svg>
+        <figcaption>
+          <ol role="list" aria-label="How the scanned model runs">
+            <li>QR payload</li>
+            <li>Pretrained weights</li>
+            <li>Local inference</li>
+          </ol>
+        </figcaption>
+      </figure>
     </div>
   </main>
 </body>
