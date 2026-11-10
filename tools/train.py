@@ -25,15 +25,25 @@ CANDIDATES = {
     "transformer-24-i2": (1, 24, 24, 2),
     "rnn-24-i4": (2, 24, 0, 4),
     "rnn-32-i3": (2, 32, 0, 3),
+    "rnn-24-i4-long": (2, 24, 0, 4),
+    "rnn-26-i4-long": (2, 26, 0, 4),
 }
 
 
-def load_split():
+def load_split(text_corpus=None):
+    if text_corpus:
+        rows = text_corpus.read_text(encoding="utf-8").splitlines()
+    else:
+        rows = (row[0] for row in csv.reader(DATA.read_text(encoding="ascii").splitlines()))
     names = sorted({
-        name.lower() for name, _, _ in csv.reader(DATA.read_text(encoding="ascii").splitlines())
+        name.lower() for name in rows
         if 2 <= len(name) < CONTEXT and name.isascii() and name.isalpha()
     })
     random.Random(SEED).shuffle(names)
+    if text_corpus:
+        names = names[:28613]  # Match the number of distinct names in the demo corpus.
+    if len(names) < 5:
+        raise ValueError("A corpus needs at least five eligible sequences.")
     fifth = len(names) // 5
     return names[2 * fifth:], names[:fifth], names[fifth:2 * fifth]
 
@@ -55,7 +65,7 @@ class Model(nn.Module):
         ])
         if arch == 2:
             # Register no extra trainable state. functional_call supplies both matrices.
-            self.rnn = nn.RNN(width, width, bias=False, batch_first=True, device="meta")
+            self.rnn = nn.RNN(width, width, bias=False, batch_first=True, device="meta").requires_grad_(False)
 
     def forward(self, tokens, qat=False, weights=None):
         if weights is None:
@@ -148,15 +158,16 @@ def run(name, steps, splits, directory):
             payload, raw_bytes, matrices = model.export()
             val_loss = evaluate(model, validation, matrices)
             if best is None or val_loss < best[0]:
-                best = (val_loss, payload, raw_bytes, matrices, step + 1, evaluate(model, test))
-    val_loss, payload, raw_bytes, matrices, checkpoint, float_test = best
+                shadow = tuple(weight.detach().clone() for weight in model.weights)
+                best = (val_loss, payload, raw_bytes, matrices, step + 1, shadow)
+    val_loss, payload, raw_bytes, matrices, checkpoint, shadow = best
     (directory / f"{name}.qrl").write_bytes(payload)
     (directory / f"{name}.json").write_text(json.dumps(fixtures(model, matrices)), encoding="utf-8")
     result = {
         "model": name, "parameters": sum(w.numel() for w in model.weights),
         "bytes": len(payload), "packed_bytes": raw_bytes, "step": checkpoint,
         "validation_nll": val_loss, "test_nll": evaluate(model, test, matrices),
-        "float_test_nll": float_test,
+        "float_test_nll": evaluate(model, test, shadow),
         "seconds": round(time.perf_counter() - started, 2),
         "sha256": hashlib.sha256(payload).hexdigest(),
     }
@@ -166,19 +177,23 @@ def run(name, steps, splits, directory):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("models", nargs="*", choices=None)
-    parser.add_argument("--steps", type=int, default=2000)
+    parser.add_argument("models", nargs="*")
+    parser.add_argument("--steps", type=int, help="Override the per-candidate training schedule")
     parser.add_argument("--out", type=Path, default=ROOT / "work")
+    parser.add_argument("--text-corpus", type=Path, help="Experimental corpus with one word per line")
     args = parser.parse_args()
-    if args.steps < 1 or set(args.models) - CANDIDATES.keys():
+    if (args.steps is not None and args.steps < 1) or set(args.models) - CANDIDATES.keys():
         parser.error(f"Provide positive steps and model names from {', '.join(CANDIDATES)}")
     torch.set_num_threads(2)
     torch.use_deterministic_algorithms(True)
     args.out.mkdir(parents=True, exist_ok=True)
-    names = load_split()
-    print("Train / validation / test names:", *(len(part) for part in names), flush=True)
+    names = load_split(args.text_corpus)
+    print("Train / validation / test sequences:", *(len(part) for part in names), flush=True)
     splits = [batches(part) for part in names]
-    results = [run(name, args.steps, splits, args.out) for name in (args.models or CANDIDATES)]
+    results = [
+        run(name, args.steps or (5000 if name.endswith("-long") else 2000), splits, args.out)
+        for name in (args.models or CANDIDATES)
+    ]
     (args.out / "training.json").write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
 
 

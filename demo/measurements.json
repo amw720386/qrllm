@@ -1,0 +1,429 @@
+{
+  "selected": {
+    "model": "rnn-24-i4-long",
+    "encoding": "radix43",
+    "version": 35,
+    "ecc": "Q",
+    "pixels": 2028,
+    "quiet_zone_modules": 6,
+    "url_characters": 1796,
+    "sha256": "4cb44b690846e9951f0e878c31e5bedc8bb36e2af6d8bb946e2c0cbb71a38d13"
+  },
+  "models": [
+    {
+      "model": "transformer-12-i4",
+      "parameters": 1668,
+      "bytes": 865,
+      "packed_bytes": 880,
+      "step": 2000,
+      "validation_nll": 2.2663624623993726,
+      "test_nll": 2.2661769393849034,
+      "float_test_nll": 2.266165327614106,
+      "seconds": 26.45,
+      "sha256": "2921b0055ae82a4331b244e362adc5a2b00f7309888eb82925f35ccf186fb3e9",
+      "brotli_bytes": 840,
+      "encodings": {
+        "base64url": {
+          "characters": 1189,
+          "bits_v27_plus": 9532,
+          "versions": {
+            "L": 25,
+            "M": 28,
+            "Q": 34,
+            "H": 39
+          }
+        },
+        "base45-escaped": {
+          "characters": 1412,
+          "bits_v27_plus": 7888,
+          "versions": {
+            "L": 22,
+            "M": 25,
+            "Q": 31,
+            "H": 35
+          }
+        },
+        "radix43": {
+          "characters": 1333,
+          "bits_v27_plus": 7456,
+          "versions": {
+            "L": 21,
+            "M": 25,
+            "Q": 30,
+            "H": 34
+          }
+        },
+        "decimal": {
+          "characters": 2119,
+          "bits_v27_plus": 7265,
+          "versions": {
+            "L": 21,
+            "M": 24,
+            "Q": 29,
+            "H": 34
+          }
+        }
+      }
+    },
+    {
+      "model": "transformer-16-i4",
+      "parameters": 2480,
+      "bytes": 1217,
+      "packed_bytes": 1286,
+      "step": 2000,
+      "validation_nll": 2.2404659353663785,
+      "test_nll": 2.2431076504933403,
+      "float_test_nll": 2.2717928205217635,
+      "seconds": 31.91,
+      "sha256": "c6d8d5359b9f0a426f81a6462248f9c6a022ede8e46ab7a0f2e66a39f6b0400b",
+      "brotli_bytes": 1200,
+      "encodings": {
+        "base64url": {
+          "characters": 1658,
+          "bits_v27_plus": 13284,
+          "versions": {
+            "L": 30,
+            "M": 34,
+            "Q": 40
+          }
+        },
+        "base45-escaped": {
+          "characters": 1936,
+          "bits_v27_plus": 10770,
+          "versions": {
+            "L": 26,
+            "M": 30,
+            "Q": 36
+          }
+        },
+        "radix43": {
+          "characters": 1861,
+          "bits_v27_plus": 10360,
+          "versions": {
+            "L": 26,
+            "M": 30,
+            "Q": 36
+          }
+        },
+        "decimal": {
+          "characters": 2966,
+          "bits_v27_plus": 10088,
+          "versions": {
+            "L": 25,
+            "M": 29,
+            "Q": 35,
+            "H": 40
+          }
+        }
+      }
+    },
+    {
+      "model": "transformer-24-i3",
+      "parameters": 4488,
+      "bytes": 1690,
+      "packed_bytes": 1729,
+      "step": 1250,
+      "validation_nll": 2.3110867975650344,
+      "test_nll": 2.30807460683107,
+      "float_test_nll": 2.3421391557486877,
+      "seconds": 32.91,
+      "sha256": "545d67cab8f770a0622e67b63ed3c1e6c76788b1f5a7c6b4d44e74204e65947b",
+      "brotli_bytes": 1673,
+      "encodings": {
+        "base64url": {
+          "characters": 2289,
+          "bits_v27_plus": 18332,
+          "versions": {
+            "L": 35,
+            "M": 40
+          }
+        },
+        "base45-escaped": {
+          "characters": 2745,
+          "bits_v27_plus": 15220,
+          "versions": {
+            "L": 32,
+            "M": 36
+          }
+        },
+        "radix43": {
+          "characters": 2570,
+          "bits_v27_plus": 14260,
+          "versions": {
+            "L": 31,
+            "M": 35
+          }
+        },
+        "decimal": {
+          "characters": 4106,
+          "bits_v27_plus": 13888,
+          "versions": {
+            "L": 31,
+            "M": 35
+          }
+        }
+      }
+    },
+    {
+      "model": "transformer-24-i2",
+      "parameters": 4488,
+      "bytes": 711,
+      "packed_bytes": 1168,
+      "step": 1000,
+      "validation_nll": 2.521008400328599,
+      "test_nll": 2.519884642476751,
+      "float_test_nll": 3.0608411696118125,
+      "seconds": 29.62,
+      "sha256": "a69a4be3ddd3a55183dcf6c5b895fc6f38eff574cce8bf8c9b91e1fc99040a47",
+      "brotli_bytes": 636,
+      "encodings": {
+        "base64url": {
+          "characters": 983,
+          "bits_v27_plus": 7884,
+          "versions": {
+            "L": 22,
+            "M": 25,
+            "Q": 31,
+            "H": 35
+          }
+        },
+        "base45-escaped": {
+          "characters": 1187,
+          "bits_v27_plus": 6651,
+          "versions": {
+            "L": 20,
+            "M": 23,
+            "Q": 28,
+            "H": 32
+          }
+        },
+        "radix43": {
+          "characters": 1102,
+          "bits_v27_plus": 6186,
+          "versions": {
+            "L": 19,
+            "M": 22,
+            "Q": 27,
+            "H": 31
+          }
+        },
+        "decimal": {
+          "characters": 1748,
+          "bits_v27_plus": 6028,
+          "versions": {
+            "L": 19,
+            "M": 22,
+            "Q": 26,
+            "H": 31
+          }
+        }
+      }
+    },
+    {
+      "model": "rnn-24-i4",
+      "parameters": 2448,
+      "bytes": 1184,
+      "packed_bytes": 1254,
+      "step": 1500,
+      "validation_nll": 2.204550824798206,
+      "test_nll": 2.2044008814932976,
+      "float_test_nll": 2.2354277127204547,
+      "seconds": 16.7,
+      "sha256": "fa54c017c2f90762559b1842e6016bdbaf2fca616dac21dc8153e59227ccb3cb",
+      "brotli_bytes": 1156,
+      "encodings": {
+        "base64url": {
+          "characters": 1614,
+          "bits_v27_plus": 12932,
+          "versions": {
+            "L": 29,
+            "M": 33,
+            "Q": 40
+          }
+        },
+        "base45-escaped": {
+          "characters": 1918,
+          "bits_v27_plus": 10671,
+          "versions": {
+            "L": 26,
+            "M": 30,
+            "Q": 36
+          }
+        },
+        "radix43": {
+          "characters": 1811,
+          "bits_v27_plus": 10085,
+          "versions": {
+            "L": 25,
+            "M": 29,
+            "Q": 35,
+            "H": 40
+          }
+        },
+        "decimal": {
+          "characters": 2887,
+          "bits_v27_plus": 9825,
+          "versions": {
+            "L": 25,
+            "M": 29,
+            "Q": 34,
+            "H": 40
+          }
+        }
+      }
+    },
+    {
+      "model": "rnn-32-i3",
+      "parameters": 3776,
+      "bytes": 1413,
+      "packed_bytes": 1446,
+      "step": 2000,
+      "validation_nll": 2.228977193876805,
+      "test_nll": 2.2306759593250987,
+      "float_test_nll": 2.257470653420153,
+      "seconds": 21.05,
+      "sha256": "6f55b24ecfcc33853b21c4d0f9cd30b8429a62870610697ab3aba83fe41ede84",
+      "brotli_bytes": 1405,
+      "encodings": {
+        "base64url": {
+          "characters": 1919,
+          "bits_v27_plus": 15372,
+          "versions": {
+            "L": 32,
+            "M": 37
+          }
+        },
+        "base45-escaped": {
+          "characters": 2262,
+          "bits_v27_plus": 12563,
+          "versions": {
+            "L": 29,
+            "M": 33,
+            "Q": 39
+          }
+        },
+        "radix43": {
+          "characters": 2155,
+          "bits_v27_plus": 11977,
+          "versions": {
+            "L": 28,
+            "M": 32,
+            "Q": 38
+          }
+        },
+        "decimal": {
+          "characters": 3438,
+          "bits_v27_plus": 11662,
+          "versions": {
+            "L": 27,
+            "M": 32,
+            "Q": 38
+          }
+        }
+      }
+    },
+    {
+      "model": "rnn-24-i4-long",
+      "parameters": 2448,
+      "bytes": 1174,
+      "packed_bytes": 1254,
+      "step": 5000,
+      "validation_nll": 2.193397581934145,
+      "test_nll": 2.194281642440724,
+      "float_test_nll": 2.2797128716293646,
+      "seconds": 44.44,
+      "sha256": "4cb44b690846e9951f0e878c31e5bedc8bb36e2af6d8bb946e2c0cbb71a38d13",
+      "brotli_bytes": 1147,
+      "encodings": {
+        "base64url": {
+          "characters": 1601,
+          "bits_v27_plus": 12828,
+          "versions": {
+            "L": 29,
+            "M": 33,
+            "Q": 40
+          }
+        },
+        "base45-escaped": {
+          "characters": 1917,
+          "bits_v27_plus": 10666,
+          "versions": {
+            "L": 26,
+            "M": 30,
+            "Q": 36
+          }
+        },
+        "radix43": {
+          "characters": 1796,
+          "bits_v27_plus": 10003,
+          "versions": {
+            "L": 25,
+            "M": 29,
+            "Q": 35,
+            "H": 40
+          }
+        },
+        "decimal": {
+          "characters": 2863,
+          "bits_v27_plus": 9745,
+          "versions": {
+            "L": 25,
+            "M": 29,
+            "Q": 34,
+            "H": 39
+          }
+        }
+      }
+    },
+    {
+      "model": "rnn-26-i4-long",
+      "parameters": 2756,
+      "bytes": 1307,
+      "packed_bytes": 1408,
+      "step": 5000,
+      "validation_nll": 2.1826674724448125,
+      "test_nll": 2.1819957421750438,
+      "float_test_nll": 2.2888150028007184,
+      "seconds": 25.24,
+      "sha256": "d9954e8ba832966a0ffddd237255b1d7e8acce62bed22541739beef228cbfdfa",
+      "brotli_bytes": 1287,
+      "encodings": {
+        "base64url": {
+          "characters": 1778,
+          "bits_v27_plus": 14244,
+          "versions": {
+            "L": 31,
+            "M": 35
+          }
+        },
+        "base45-escaped": {
+          "characters": 2111,
+          "bits_v27_plus": 11733,
+          "versions": {
+            "L": 27,
+            "M": 32,
+            "Q": 38
+          }
+        },
+        "radix43": {
+          "characters": 1996,
+          "bits_v27_plus": 11103,
+          "versions": {
+            "L": 27,
+            "M": 31,
+            "Q": 37
+          }
+        },
+        "decimal": {
+          "characters": 3183,
+          "bits_v27_plus": 10812,
+          "versions": {
+            "L": 26,
+            "M": 30,
+            "Q": 36
+          }
+        }
+      }
+    }
+  ]
+}
