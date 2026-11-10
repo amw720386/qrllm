@@ -13,11 +13,35 @@
   <p id="message" role="status" data-state="empty">what are you doing here?</p>
   <main id="lab" hidden>
     <a class="back" href="https://ahamedwajibu.com/" aria-label="Back to ahamedwajibu.com">←</a>
-    <form id="generate-form">
-      <input id="prefix" aria-label="Starting letters" placeholder="Starting letters, then Enter" type="text" pattern="[A-Za-z]*" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go">
-      <output id="result" for="prefix" aria-label="Generated name" aria-live="off"></output>
-      <span id="announcement" class="sr-only" role="status"></span>
-    </form>
+    <div class="workspace">
+      <h1>QRLLM</h1>
+      <form id="generate-form">
+        <input id="prefix" aria-label="Starting letters" placeholder="Starting letters, then Enter" type="text" pattern="[A-Za-z]*" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go">
+        <output id="result" for="prefix" aria-label="Generated name" aria-live="off"></output>
+        <span id="announcement" class="sr-only" role="status"></span>
+      </form>
+      <ol class="pipeline" aria-label="How the scanned model runs">
+        <li>
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="2" d="M4 4h8v8H4zm16 0h8v8h-8zM4 20h8v8H4z"/>
+            <path fill="currentColor" d="M7 7h2v2H7zm16 0h2v2h-2zM7 23h2v2H7zm9-7h4v4h-4zm8 0h4v4h-4zm-4 4h4v4h-4zm4 4h4v4h-4zm-8 0h4v4h-4z"/>
+          </svg>
+          <span>QR payload</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="m16 3 13 7-13 7L3 10zm13 12-13 7-13-7m26 5-13 7-13-7M9.5 6.5l13 7m0-7-13 7"/>
+          </svg>
+          <span>Pretrained weights</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M3 5h26v22H3zm0 5h26m-20 6 4 3-4 3m8 0h6"/>
+          </svg>
+          <span>Local inference</span>
+        </li>
+      </ol>
+    </div>
   </main>
 </body>
 </html>
