@@ -32,9 +32,14 @@ body { margin: 0; }
 .back:hover { background: #222; }
 .workspace { width: min(100%, 600px); }
 h1 {
-  margin: 0 0 18px;
+  margin: 0;
   font: 750 clamp(2.75rem, 9vw, 5rem)/.9 system-ui, sans-serif;
   letter-spacing: -.075em;
+}
+.subtitle {
+  margin: 8px 0 18px;
+  color: #bbb;
+  font: .875rem var(--mono);
 }
 
 form { display: grid; }
