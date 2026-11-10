@@ -121,11 +121,6 @@ def main():
     if recovered != url or decode("#" + urlsplit(recovered).fragment) != payload:
         raise RuntimeError("QR failed exact URL and payload round trip")
     (args.out / "model-url.txt").write_text(url + "\n", encoding="ascii")
-    (args.out / "open.md").write_text(
-        f"# Open QRLLM\n\n[Open the complete model link]({url})\n\n"
-        "The destination requires the static site to be deployed. The fragment carries the model.\n",
-        encoding="ascii",
-    )
     (args.out / "model.qrl").write_bytes(payload)
     (args.out / "reference.json").write_bytes((args.work / f"{name}.json").read_bytes())
     selected = {
