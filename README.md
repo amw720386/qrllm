@@ -8,9 +8,7 @@ payload from the URL fragment and generates locally in JavaScript.
 [Download the QR PNG](demo/qrllm.png) · [Open the full model link](demo/open.md) · [Deployment instructions](docs/deploy.md)
 
 The link in the QR targets `https://qrllm.ahamedwajibu.com/`. It requires the
-static site to be deployed at that origin. The bare page says “what are you
-doing here?” A model link opens a starting-letter field and a generated name.
-Press Enter to sample again, optionally with a prefix.
+static site to be deployed at that origin.
 
 ## Try it locally
 
